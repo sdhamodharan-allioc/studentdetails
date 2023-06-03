@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="helloBean" class="com.training.studentspring.bean.HelloName">
+        <property name="name" value="JAVA WORLD" />
+    </bean>
+
+    <bean id="studentBean" class="com.training.studentspring.bean.Student" scope="singleton" >
+        <constructor-arg name="studentId" value="100"/>
+        <constructor-arg name="studentName" value="Savithri"/>
+        <constructor-arg name="address" ref="addressBean" />
+    </bean>
+
+    <bean id="addressBean" class="com.training.studentspring.bean.Address" scope="singleton">
+        <constructor-arg  name="building" value="VGN Mahalakshmi Nagar"/>
+        <constructor-arg name="city" value="chennai"/>
+        <constructor-arg name="pincode" value="600077"/>
+    </bean>
+
+    <bean id="studentPrototypeBean" class="com.training.studentspring.bean.Student" scope="prototype" >
+        <constructor-arg name="studentId" value="200"/>
+        <constructor-arg name="studentName" value="Sumathi"/>
+        <constructor-arg name="address" ref="addressBean" />
+    </bean>
+
+    <bean id="addressPrototypeBean" class="com.training.studentspring.bean.Address" scope="prototype">
+        <constructor-arg  name="building" value="Vasantham Nagar"/>
+        <constructor-arg name="city" value="polur"/>
+        <constructor-arg name="pincode" value="606803"/>
+    </bean>
+</beans>
