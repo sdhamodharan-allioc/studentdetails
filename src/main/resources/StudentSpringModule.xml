@@ -22,12 +22,36 @@
     <bean id="studentPrototypeBean" class="com.training.studentspring.bean.Student" scope="prototype" >
         <constructor-arg name="studentId" value="200"/>
         <constructor-arg name="studentName" value="Sumathi"/>
-        <constructor-arg name="address" ref="addressBean" />
+        <constructor-arg name="address" ref="addressPrototypeBean" />
     </bean>
 
     <bean id="addressPrototypeBean" class="com.training.studentspring.bean.Address" scope="prototype">
         <constructor-arg  name="building" value="Vasantham Nagar"/>
         <constructor-arg name="city" value="polur"/>
         <constructor-arg name="pincode" value="606803"/>
+    </bean>
+
+    <bean id="studentSingletontypeBean" class="com.training.studentspring.bean.Student" scope="singleton" >
+        <constructor-arg name="studentId" value="300"/>
+        <constructor-arg name="studentName" value="Naveen"/>
+        <constructor-arg name="address" ref="addressPrototypeBean1" />
+    </bean>
+
+    <bean id="addressPrototypeBean1" class="com.training.studentspring.bean.Address" scope="prototype">
+        <constructor-arg  name="building" value="Perumal koil street"/>
+        <constructor-arg name="city" value="Pelasoor"/>
+        <constructor-arg name="pincode" value="606803"/>
+    </bean>
+
+    <bean id="studentPrototypeBean1" class="com.training.studentspring.bean.Student" scope="prototype" >
+        <constructor-arg name="studentId" value="400"/>
+        <constructor-arg name="studentName" value="Bala"/>
+        <constructor-arg name="address" ref="addressSingletontypeBean" />
+    </bean>
+
+    <bean id="addressSingletontypeBean" class="com.training.studentspring.bean.Address" scope="singleton">
+        <constructor-arg  name="building" value="Vasantham Nagar"/>
+        <constructor-arg name="city" value="TVM"/>
+        <constructor-arg name="pincode" value="606807"/>
     </bean>
 </beans>
